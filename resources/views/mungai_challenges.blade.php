@@ -36,34 +36,50 @@
 
 // findFactorsOfNumber();
 
-function printFactorsOfNumber()
-{
-    $factors3 = [];
-    $factors5 = [];
-    $factors35 = [];
-    $factors = [];
+// quiz 1 alternative
+// function printFactorsOfNumber()
+// {
+//     $factors3 = [];
+//     $factors5 = [];
+//     $factors35 = [];
+//     $factors = [];
 
-    for ($i = 0; $i < 100; $i++) {
+//     for ($i = 0; $i < 100; $i++) {
+//         if ($i % 3 == 0 && $i % 5 == 0) {
+//             $factors35[] = $i;
+//             // echo 'FizzBuzz \n';
+//         } elseif ($i % 5 == 0) {
+//             $factors5[] = $i;
+//             // echo 'Buzz \n';
+//         } elseif ($i % 3 == 0) {
+//             $factors3[] = $i;
+//             // echo 'Fizz \n';
+//         } else {
+//             $factors[] = $i;
+//         }
+//     }
+
+//     echo 'Numbers Divisible By 3: ' . implode(',', $factors3) . "\n";
+//     echo 'Numbers Divisible By 5: ' . implode(',', $factors5) . "\n";
+//     echo 'Numbers Divisible By 3 & 5: ' . implode(',', $factors35) . "\n";
+//     echo 'Numbers Not Divisible: ' . implode(',', $factors) . "\n";
+// }
+// printFactorsOfNumber();
+
+// quiz 2
+function sumOfFactorOfNumbers($number)
+{
+    $factors = [];
+    for ($i = 0; $i < $number; $i++) {
         if ($i % 3 == 0 && $i % 5 == 0) {
-            $factors35[] = $i;
-            // echo 'FizzBuzz \n';
-        } elseif ($i % 5 == 0) {
-            $factors5[] = $i;
-            // echo 'Buzz \n';
-        } elseif ($i % 3 == 0) {
-            $factors3[] = $i;
-            // echo 'Fizz \n';
-        } else {
-            $factors[] = $i;
+            array_push($factors, $i);
         }
     }
 
-    echo 'Numbers Divisible By 3: ' . implode(',', $factors3) . "\n";
-    echo 'Numbers Divisible By 5: ' . implode(',', $factors5) . "\n";
-    echo 'Numbers Divisible By 3 & 5: ' . implode(',', $factors35) . "\n";
-    echo 'Numbers Not Divisible: ' . implode(',', $factors) . "\n";
+    $sum = array_sum($factors);
+    // dd($factors);
 }
 
-printFactorsOfNumber();
+sumOfFactorOfNumbers(50);
 
 ?>
