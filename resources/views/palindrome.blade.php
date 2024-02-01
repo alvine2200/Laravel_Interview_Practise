@@ -1,17 +1,23 @@
 <?php
 
+function checkIfNumberIsPalindrome($number)
+{
+    $num = (string) $number;
+    return $num === strrev($num);
+}
+
 function isPalindrome($str)
 {
-    $cleanedString = strtolower(preg_replace('/0-9a-z/', '', $str));
+    $cleanedString = strtolower(preg_replace('[^/0-9a-z/]', '', $str));
     return $cleanedString === strrev($cleanedString);
 }
 
-$stringToCheck = '1221';
+$numberToCheck = 2442;
 
-if (isPalindrome($stringToCheck)) {
-    echo "$stringToCheck is Palindrome";
+if (checkIfNumberIsPalindrome($numberToCheck)) {
+    echo "$numberToCheck is Palindrome";
 } else {
-    echo "$stringToCheck is not Palindrome!";
+    echo "$numberToCheck is not Palindrome!";
 }
 
 ?>
